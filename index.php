@@ -51,7 +51,7 @@ $dbname = "mydb";
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $stmt = $conn->prepare("SELECT id, first_name, last_name FROM board WHERE last_name = 'palmer'");
+    $stmt = $conn->prepare("SELECT first_name, last_name, gender FROM `board` WHERE gender = 'female'");
     $stmt->execute();
 
     // set the resulting array to associative
